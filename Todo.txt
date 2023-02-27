@@ -1,0 +1,6 @@
+19/02/2023
+
+- Criar um submenu por entidade: Pessoa p, Empresa e, Categoria g, Conta c
+- Cada submenu deve ter as mesmas opcoes: Criar c, Exibir todos t, Editar e, Pesquisar p, Remover r
+    * Dica, se o menu e identico ele podera ser reutilizado
+- Obs: falta fazer pesquisar de empresa, categoria

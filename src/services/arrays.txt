@@ -1,0 +1,14 @@
+[ a, b, c , d]
+comeca em 0.. 0=a, 1=b , 2=c, ...
+splice(1,2)
+deletar posicao 1 (1=b) dois elementos do array a frente, ou seja,
+b e c
+
+splice(1,1)
+deletar posicao 1 (1=b) um elemento (ele mesmo)
+
+splice(0,1)
+deletar posicao 0 (0=a) um elemento (ele mesmo)
+
+splice(0,2)
+deletar posicao 0 (0=a) dois elementos (posicao 0 = a , posicao = 1 = b)
