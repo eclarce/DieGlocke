@@ -6,6 +6,7 @@ export default class Conta {
     id: number
     categoria?: Categoria
     valor?: number
+    // TODO: 1
     empresa?: Empresa
   
     constructor(id: number, categoria: Categoria, valor: number, empresa: Empresa) {

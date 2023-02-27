@@ -4,3 +4,7 @@
 - Cada submenu deve ter as mesmas opcoes: Criar c, Exibir todos t, Editar e, Pesquisar p, Remover r
     * Dica, se o menu e identico ele podera ser reutilizado
 - Obs: falta fazer pesquisar de empresa, categoria
+
+27/02/2023
+
+- TODO: 1 Colocar Empresa dentro da entidade Conta no lugar da string.

@@ -17,6 +17,7 @@ const categoriaService = new CategoriaService()
 
 async function main() {
 
+    console.log('Contribuicao do ksmz')
     showTitle()
 
     /*   let nome = await ask('Login: ')
