@@ -22,10 +22,10 @@ export default class EmpresaService {
         return empresaEncontrada
     }
 
-    pesquisarEmpresaPorId(id: number) {
+    pesquisarEmpresaPorNome(nome: string) {
         let empresasEncontradas: Empresa[] = []
         this.bancoEmpresas.forEach(empresa => {
-            if (empresa.id == id) {
+            if (empresa.nome?.includes(nome)) {
                 empresasEncontradas.push(empresa)
             }
         })

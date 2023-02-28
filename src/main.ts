@@ -131,8 +131,8 @@ async function main() {
             }
 
             else if (option == 'p')
-            option = await ask('Digite o id da empresa: ')
-            empresaService.pesquisarEmpresaPorId(Number(option))
+            option = await ask('Digite o nome da empresa: ')
+            empresaService.pesquisarEmpresaPorNome(option)
         }
 
         else if (option == 'g') {
