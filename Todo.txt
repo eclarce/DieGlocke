@@ -7,5 +7,12 @@
 
 27/02/2023
 
-- TODO: 1 Colocar Empresa dentro da entidade Conta no lugar da string.
+- TODO-1 Colocar Empresa dentro da entidade Conta no lugar da string.
 
+- TODO-2 Possibilitar edicao dos dados da Categoria. 
+    - O usuario deve ver opcao "Editar" no menu de categorias
+    - Ao escolher essa opcao, Exibir a lista de todas as categorias
+    - Perguntar o ID da categoria para editar
+    - Perguntar todos os dados da categoria para (excluindo o dado "ID" que ja existe)
+    - Salvar todos os dados digitados no lugar da categoria anterior, usando o ID
+    que foi perguntado.
