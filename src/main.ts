@@ -35,7 +35,7 @@ async function main() {
 
     // Testes intervalo conta
 
-    const categoria1 = new Categoria('luz', 1, )
+    const categoria1 = new Categoria('luz', 1,)
     const categoria2 = new Categoria('agua', 2,)
     categoriaService.cadastraCategoria(categoria1)
     categoriaService.cadastraCategoria(categoria2)
@@ -131,7 +131,7 @@ async function main() {
             }
 
             else if (option == 'p')
-            option = await ask('Digite o nome da empresa: ')
+                option = await ask('Digite o nome da empresa: ')
             empresaService.pesquisarEmpresaPorNome(option)
         }
 
@@ -182,9 +182,17 @@ async function iniciaCadastroConta() {
     mostraCategorias()
     let categoriaId: string = await ask('Digite o id da categoria: ')
     let categoriaEncontrada = categoriaService.findCategoriaPorId(Number(categoriaId))
+    if (categoriaEncontrada == null) {
+        console.log('***Id da categoria Invalido***')
+        return
+    }
     mostraEmpresas()
     let empresaId: string = await ask('Digite o id da empresa: ')
     let empresaEncontrada = empresaService.findEmpresaPorId(Number(empresaId))
+    if (empresaEncontrada == null) {
+        console.log('***Id da empresa Invalido***')
+        return
+    }
     console.log('Conta cadastrada')
     let contaX: Conta = new Conta(Number(id), categoriaEncontrada!, Number(valor), empresaEncontrada!)
     contaService.cadastrarConta(contaX)
