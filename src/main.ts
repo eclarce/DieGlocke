@@ -143,6 +143,21 @@ async function main() {
             }
             else if (option == 't') {
                 mostraCategorias()
+            
+            } 
+            // TODO-2
+            else if (option == 'e') {
+                mostraCategorias()
+                console.log('Escolha opcao [e]ditar [d]eletar: ')
+               
+                if (option == 'e') {
+                    let idCategoria = await ask('Id categoria: ')
+                    // iniciaEdicaoCategoria(Number(idCategoria))
+                }
+                else if (option == 'd') {
+                    // option = await ask('Id categoria: ')
+                    // removerCategaoriaPorId()
+                } 
             }
 
             else if (option == 'p') {
@@ -215,6 +230,21 @@ async function iniciaCadastroCategoria() {
     let categoriaX: Categoria = new Categoria(tipo, Number(id))
     categoriaService.cadastraCategoria(categoriaX)
 }
+
+
+// TODO-2
+async function iniciaEdicaoCategoria(id: number) {
+    
+    console.log('Preencha os dados abaixo.')
+    let tipo: string = await ask('Tipo:')
+    
+    // console.log('Categoria atualizada')
+    
+    // Ao inves de cadastrar, substituir a categoria por id no array
+    // let categoriaX: Categoria = new Categoria(tipo, Number(id))
+    // categoriaService.cadastraCategoria(categoriaX)
+}
+
 
 function mostraPessoas() {
     pessoaService.exibirTodos()

@@ -47,6 +47,7 @@ export async function showMenuCategoria() {
     console.log('Cadastrar categoria        [c]')
     console.log('Ver categorias cadastradas [t]')
     console.log('Pesquisar categorias       [p]')
+    console.log('Editar categorias          [e]')
     console.log('==============================')
 }
 
