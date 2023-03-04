@@ -35,14 +35,14 @@ export default class CategoriaService {
         }
     }
 
-    atualizaCategoriaPorId(idParaAtualizar: Categoria) {
+     atualizaCategoriaPorId(idParaAtualizar: number) {
         let posEncontrada = -1
         posEncontrada = this.bancoCategorias.findIndex(idDoArray => {
             if (idDoArray.id == idParaAtualizar)
                 return true
         })
         if (posEncontrada >= 0) {
-            this.bancoCategorias.push()
+            this.bancoCategorias.push
         }
     }
 
@@ -56,6 +56,11 @@ export default class CategoriaService {
 
         if (posEncontrada >= 0) {
             this.bancoCategorias.splice(posEncontrada, 1)
+            console.log('Categoria removida com sucessog')
+        }
+
+        if (posEncontrada < 0) {
+            console.log('***Id nao encontrado***')
         }
     }
 }

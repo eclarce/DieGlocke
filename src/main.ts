@@ -151,12 +151,11 @@ async function main() {
                 option = await ask('Escolha opcao [e]ditar [d]eletar: ')
                 if (option == 'e') {
                     let idCategoria = await ask('Id categoria: ')
-                     iniciaEdicaoCategoria(Number(idCategoria))
+                      await iniciaEdicaoCategoria(Number(idCategoria))
                 }
                 else if (option == 'd') {
                      option = await ask('Id categoria: ')
                     categoriaService.removerCategoriaPorId(Number(option))
-                    console.log('Categoria removida com sucesso')
                 } 
             }
 
@@ -236,8 +235,11 @@ async function iniciaCadastroCategoria() {
 async function iniciaEdicaoCategoria(id: number) {
     
     console.log('Preencha os dados abaixo.')
-    let tipo: string = await ask('Tipo:')
+    let verificaId: string = await ask('Tipo:')
+    categoriaService.atualizaCategoriaPorId(Number(verificaId))
+    
     console.log('Categoria atualizada')
+
 
     
     // Ao inves de cadastrar, substituir a categoria por id no array
