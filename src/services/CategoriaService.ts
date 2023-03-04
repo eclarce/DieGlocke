@@ -16,7 +16,7 @@ export default class CategoriaService {
         this.bancoCategorias.forEach(categoria => {
             if (categoria.id! == id) {
                 categoriaEncontrada = categoria
-                return 
+                return
             }
         })
         return categoriaEncontrada
@@ -29,9 +29,33 @@ export default class CategoriaService {
                 categoriasEncontradas.push(categoria)
             }
         })
-        
+
         if (categoriasEncontradas.length != 0) {
             console.log(categoriasEncontradas)
+        }
+    }
+
+    atualizaCategoriaPorId(idParaAtualizar: Categoria) {
+        let posEncontrada = -1
+        posEncontrada = this.bancoCategorias.findIndex(idDoArray => {
+            if (idDoArray.id == idParaAtualizar)
+                return true
+        })
+        if (posEncontrada >= 0) {
+            this.bancoCategorias.push()
+        }
+    }
+
+    removerCategoriaPorId(idParaRemover: number) {
+        let posEncontrada = -1
+        posEncontrada = this.bancoCategorias.findIndex(idDoArray => {
+            if (idDoArray.id == idParaRemover) {
+                return true
+            }
+        })
+
+        if (posEncontrada >= 0) {
+            this.bancoCategorias.splice(posEncontrada, 1)
         }
     }
 }

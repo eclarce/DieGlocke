@@ -148,15 +148,15 @@ async function main() {
             // TODO-2
             else if (option == 'e') {
                 mostraCategorias()
-                console.log('Escolha opcao [e]ditar [d]eletar: ')
-               
+                option = await ask('Escolha opcao [e]ditar [d]eletar: ')
                 if (option == 'e') {
                     let idCategoria = await ask('Id categoria: ')
-                    // iniciaEdicaoCategoria(Number(idCategoria))
+                     iniciaEdicaoCategoria(Number(idCategoria))
                 }
                 else if (option == 'd') {
-                    // option = await ask('Id categoria: ')
-                    // removerCategaoriaPorId()
+                     option = await ask('Id categoria: ')
+                    categoriaService.removerCategoriaPorId(Number(option))
+                    console.log('Categoria removida com sucesso')
                 } 
             }
 
@@ -237,8 +237,8 @@ async function iniciaEdicaoCategoria(id: number) {
     
     console.log('Preencha os dados abaixo.')
     let tipo: string = await ask('Tipo:')
-    
-    // console.log('Categoria atualizada')
+    console.log('Categoria atualizada')
+
     
     // Ao inves de cadastrar, substituir a categoria por id no array
     // let categoriaX: Categoria = new Categoria(tipo, Number(id))
