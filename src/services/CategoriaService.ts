@@ -35,14 +35,16 @@ export default class CategoriaService {
         }
     }
 
-     atualizaCategoriaPorId(idParaAtualizar: number) {
+    atualizaCategoriaPorId(idParaAtualizar: number, novoTipo: string) {
         let posEncontrada = -1
         posEncontrada = this.bancoCategorias.findIndex(idDoArray => {
             if (idDoArray.id == idParaAtualizar)
                 return true
         })
         if (posEncontrada >= 0) {
-            this.bancoCategorias.push
+            const categoriaAtualizada = this.bancoCategorias[posEncontrada]
+            categoriaAtualizada.tipo = novoTipo
+            console.log('Categoria atualizada:', categoriaAtualizada)
         }
     }
 

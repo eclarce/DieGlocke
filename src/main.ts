@@ -148,14 +148,15 @@ async function main() {
             // TODO-2
             else if (option == 'e') {
                 mostraCategorias()
-                option = await ask('Escolha opcao [e]ditar [d]eletar: ')
+                option = await ask('Escolha opcao [e]ditar [d]eletar:')
+               
                 if (option == 'e') {
                     let idCategoria = await ask('Id categoria: ')
-                      await iniciaEdicaoCategoria(Number(idCategoria))
+                    await iniciaEdicaoCategoria(Number(idCategoria))
                 }
                 else if (option == 'd') {
-                     option = await ask('Id categoria: ')
-                    categoriaService.removerCategoriaPorId(Number(option))
+                    // option = await ask('Id categoria: ')
+                    // removerCategaoriaPorId()
                 } 
             }
 
@@ -235,12 +236,9 @@ async function iniciaCadastroCategoria() {
 async function iniciaEdicaoCategoria(id: number) {
     
     console.log('Preencha os dados abaixo.')
-    let verificaId: string = await ask('Tipo:')
-    categoriaService.atualizaCategoriaPorId(Number(verificaId))
-    
-    console.log('Categoria atualizada')
-
-
+    let novotipo: string = await ask('Tipo:')
+    categoriaService.atualizaCategoriaPorId(id, novotipo)
+    // console.log('Categoria atualizada')
     
     // Ao inves de cadastrar, substituir a categoria por id no array
     // let categoriaX: Categoria = new Categoria(tipo, Number(id))
