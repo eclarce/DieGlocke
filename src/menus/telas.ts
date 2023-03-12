@@ -39,6 +39,7 @@ export async function showMenuEmpresa() {
     console.log('Cadastrar empresa          [c]')
     console.log('Ver empresas cadastradas   [t]')
     console.log('Pesquisar empresas         [p]')
+    console.log('Editar empresas            [e]')
     console.log('==============================')
 }
 

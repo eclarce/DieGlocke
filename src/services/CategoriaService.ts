@@ -58,7 +58,7 @@ export default class CategoriaService {
 
         if (posEncontrada >= 0) {
             this.bancoCategorias.splice(posEncontrada, 1)
-            console.log('Categoria removida com sucessog')
+            console.log('Categoria removida com sucesso')
         }
 
         if (posEncontrada < 0) {

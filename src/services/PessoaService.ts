@@ -21,6 +21,10 @@ export default class PessoaService {
         })
         if (posEncontrada >= 0) {
             this.bancoPessoas.splice(posEncontrada, 1)
+            console.log('Pessoa deletada com sucesso')
+        }
+        else {
+            console.log('***Id nao encontrado***')
         }
     }
 

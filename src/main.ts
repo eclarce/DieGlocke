@@ -67,7 +67,6 @@ async function main() {
                     const idPessoa = Number(option)
                     if (Number.isInteger(idPessoa)) {
                         pessoaService.removerPessoa(idPessoa)
-                        console.log('Pessoa deletada com sucesso')
                     }
                     else {
                         console.log('ID nao e um numero')
@@ -119,7 +118,7 @@ async function main() {
                 }
             }
         }
-
+        //TO DO EMPRESA
         else if (option == 'e') {
             showMenuEmpresa()
             option = await ask('Opcao empresa: ')
@@ -128,6 +127,20 @@ async function main() {
             }
             else if (option == 't') {
                 mostraEmpresas()
+            }
+
+            else if (option == 'e') {
+                mostraEmpresas()
+                option = await ask('Escolha opcao: [e]ditar [d]eletar: ')
+                if (option == 'e') {
+                    let idEmpresa: string = await ask('Id empresa:')
+                    await iniciaEdicaoEmpresa(Number(idEmpresa))
+                }
+
+                else if (option == 'd') {
+                    let idParaRemover: string = await ask('Id empresa: ')
+                    empresaService.removerCategoriaPorId(Number(idParaRemover))
+                }
             }
 
             else if (option == 'p')
@@ -143,21 +156,20 @@ async function main() {
             }
             else if (option == 't') {
                 mostraCategorias()
-            
-            } 
-            // TODO-2
+
+            }
             else if (option == 'e') {
                 mostraCategorias()
-                option = await ask('Escolha opcao [e]ditar [d]eletar:')
-               
+                option = await ask('Escolha opcao: [e]ditar [d]eletar:')
+
                 if (option == 'e') {
                     let idCategoria = await ask('Id categoria: ')
                     await iniciaEdicaoCategoria(Number(idCategoria))
                 }
                 else if (option == 'd') {
-                    // option = await ask('Id categoria: ')
-                    // removerCategaoriaPorId()
-                } 
+                    let idParaRemover = await ask('Id categoria: ')
+                    categoriaService.removerCategoriaPorId(Number(idParaRemover))
+                }
             }
 
             else if (option == 'p') {
@@ -234,15 +246,21 @@ async function iniciaCadastroCategoria() {
 
 // TODO-2
 async function iniciaEdicaoCategoria(id: number) {
-    
+
     console.log('Preencha os dados abaixo.')
-    let novotipo: string = await ask('Tipo:')
-    categoriaService.atualizaCategoriaPorId(id, novotipo)
+    let novoTipo: string = await ask('Tipo:')
+    categoriaService.atualizaCategoriaPorId(id, novoTipo)
     // console.log('Categoria atualizada')
-    
+
     // Ao inves de cadastrar, substituir a categoria por id no array
     // let categoriaX: Categoria = new Categoria(tipo, Number(id))
     // categoriaService.cadastraCategoria(categoriaX)
+}
+
+async function iniciaEdicaoEmpresa(id: number) {
+    console.log('Preencha os dados abaixo.')
+    let novoNome: string = await ask('Nome:')
+    empresaService.atualizarEmpresaPorId(id, novoNome)
 }
 
 
